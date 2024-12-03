@@ -67,7 +67,7 @@ body {
 .menu-toggle {
     background: none;
     display: block;
-    color: #ffffff; /* Texte blanc */
+    color: #1f1f1f; /* Texte blanc */
     padding: 0px 15px;
     border: none;
     cursor: pointer;
@@ -173,4 +173,81 @@ section#edito p {
     font-size: 1.3rem;
     line-height: 1.5;
     margin-right: 20px;
+}
+
+/* Responsive Design pour les téléphones */
+@media (max-width: 768px) {
+    /* Corps de la page */
+    body {
+        font-size: 0.9rem; /* Réduit légèrement la taille du texte */
+    }
+
+    .background {
+        padding: 10px; /* Réduction des marges */
+        height: auto; /* Permet à la page de s'étendre avec le contenu */
+    }
+
+    /* Menu principal */
+    .header-nav {
+        width: 80%; /* Augmente la largeur du menu */
+        right: 10px; /* Réduit la distance du bord droit */
+        top: 60px; /* Position ajustée pour mobile */
+        box-shadow: none; /* Simplifie le style pour petits écrans */
+    }
+
+    .header-nav ul li a {
+        font-size: 1rem; /* Réduit la taille des liens */
+        padding: 10px 15px; /* Ajuste le padding */
+    }
+
+    /* Bouton menu */
+    .menu-toggle {
+        font-size: 2rem; /* Réduit la taille pour mobile */
+        top: 10px; /* Position légèrement ajustée */
+    }
+
+    /* Photo de profil */
+    .profile-photo img {
+        width: 200px; /* Taille réduite pour mobile */
+        height: 100px;
+    }
+
+    /* Sections */
+    section {
+        padding: 10px; /* Réduit le padding des sections */
+        margin: 10px; /* Réduit les marges autour */
+    }
+
+    section#edito h2 {
+        font-size: 3rem; /* Réduit la taille du titre */
+        margin-bottom: 15px;
+    }
+
+    section#edito p {
+        font-size: 1.2rem; /* Réduit légèrement le texte */
+    }
+
+    .vertical-text {
+        font-size: 1.8rem; /* Réduit la taille des sous-titres */
+        gap: 5px; /* Réduit l'espacement entre les lignes */
+    }
+
+    /* Footer */
+    .footer {
+        flex-direction: column; /* Empile les éléments verticalement */
+        align-items: center; /* Centre les éléments */
+        padding: 15px; /* Réduction du padding global */
+    }
+
+    .linkedin-logo img {
+        width: 50px; /* Taille réduite pour le logo LinkedIn */
+        height: 50px;
+        margin: 10px 0; /* Espacement vertical autour du logo */
+    }
+
+    .contact-info {
+        font-size: 1rem; /* Réduit la taille des coordonnées */
+        text-align: center; /* Centre le texte */
+        line-height: 1.4;
+    }
 }
