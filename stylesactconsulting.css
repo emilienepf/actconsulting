@@ -8,7 +8,7 @@ body {
 
 .background {
     height: 100vh; /* S'étend sur toute la hauteur de la page */
-    background-image: url('Capture\ d’écran\ 2024-12-03\ à\ 18.25.35.png'); /* Image de fond */
+    background-image: url('imagedefond.png'); /* Image de fond */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
