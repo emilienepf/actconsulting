@@ -1,0 +1,193 @@
+/* Réinitialisation des styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #0b6380; /* Arrière-plan léger */
+    margin: 0;
+    padding: 0;
+}
+
+/* Conteneur principal */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto; /* Centre le contenu horizontalement */
+    padding: 20px;
+}
+
+/* Titre principal */
+header h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #ffffff;
+}
+/* Menu principal */
+.header-nav {
+    position: absolute;
+    top: 85px; /* Position pour le menu déroulant sur mobile */
+    right: 30px; /* Aligné à droite */
+    width: 100px; /* Largeur fixe du menu déroulant */
+    background-color: #ffffff; /* Fond blanc */
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.576); /* Ombre légère */
+    border-radius: 5px; /* Coins arrondis */
+    max-height: 0; /* Par défaut, le menu déroulant est masqué */
+    overflow: hidden; /* Cache le contenu lorsqu'il est masqué */
+    transition: max-height 0.3s ease; /* Animation fluide pour l'ouverture/fermeture */
+    z-index: 1000; /* S'assure que le menu est au-dessus des autres éléments */
+}
+
+.header-nav.open {
+    max-height: 300px; /* Hauteur maximale lorsqu'il est ouvert */
+}
+
+/* Liens du menu */
+.header-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav ul li {
+    border-bottom: 1px solid #000000; /* Séparation entre les items dans le menu déroulant */
+}
+
+.header-nav ul li:last-child {
+    border-bottom: none;
+}
+
+.header-nav ul li a {
+    display: block;
+    padding: 15px 15px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+
+
+/* Bouton menu */
+.menu-toggle {
+    background: none;
+    display: block;
+    color: #ffffff; /* Texte blanc */
+    padding: 0px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 3rem;
+    position: absolute;
+    top: 20px; /* Légèrement descendu */
+    right: 10px; /* Position alignée à droite */
+    z-index: 1100; /* S'assure que le bouton est au-dessus du menu */
+}
+
+.menu-toggle:hover {
+    transform: scale(1.2); /* Agrandit légèrement au survol */
+}
+
+
+/* Section des offres */
+.offers {
+    display: flex;
+    justify-content: space-around; /* Distribution uniforme avec espace entre les offres */
+    align-items: center; /* Centre verticalement les offres */
+    gap: 80px; /* Espacement entre les offres */
+    padding: 50px 20px; /* Espacement autour de la section */
+    flex-wrap: wrap; /* Permet d'adapter les offres sur plusieurs lignes si nécessaire */
+}
+
+/* Une offre */
+.offer {
+    flex: 1 1 calc(30% - 20px); /* Chaque offre prend environ 30% de la largeur disponible */
+    max-width:400px; /* Limite la taille maximale */
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.offer:hover {
+    transform: scale(1.05); /* Effet de zoom au survol */
+}
+
+/* Image d'une offre */
+.offer-image {
+    width: 100%;
+    height: 300px; /* Hauteur fixe pour uniformiser les images */
+    object-fit: cover; /* Remplit sans déformer */
+    border-radius: 10px; /* Coins arrondis */
+    margin-bottom: 15px; /* Espacement sous l'image */
+}
+
+/* Description d'une offre */
+.offer p {
+    font-size: 1rem;
+    color: #ffffff; /* Texte blanc */
+    margin: 10px 0;
+    line-height: 1.6; /* Espacement entre les lignes */
+}
+
+/* Description des offres */
+.offer ul {
+    list-style-type: none; /* Supprime les puces */
+    padding: 0;
+    margin: 10px 0; /* Espacement autour de la liste */
+}
+
+.offer ul li {
+    font-size: 1rem; /* Taille du texte */
+    color: #ffffff; /* Couleur blanche */
+    line-height: 1.6; /* Espacement entre les lignes */
+    margin-bottom: 5px; /* Espacement entre les items */
+}
+
+/* Titre d'une offre */
+.offer h2 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    color: #ffffff;
+    text-align: center; /* Centre le titre */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .offers {
+        flex-wrap: wrap; /* Permet aux offres de passer à la ligne */
+        gap: 20px; /* Réduit l'espacement entre les offres */
+    }
+
+    .offer {
+        flex: 1 1 calc(45% - 20px); /* Deux offres par ligne sur mobile */
+    }
+
+    .offer-image {
+        height: 150px; /* Réduit la hauteur de l'image sur mobile */
+    }
+
+    .offer h2 {
+        font-size: 1.3rem; /* Réduit la taille du titre */
+    }
+
+    .offer p {
+        font-size: 0.9rem; /* Texte légèrement plus petit */
+    }
+}
+
+@media (max-width: 480px) {
+    .offer {
+        flex: 1 1 100%; /* Une offre par ligne sur petits écrans */
+        max-width: 100%; /* Prend toute la largeur */
+    }
+
+    .offer-image {
+        height: 250px; /* Hauteur encore réduite pour petits écrans */
+    }
+}
