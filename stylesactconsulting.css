@@ -67,7 +67,7 @@ body {
 .menu-toggle {
     background: none;
     display: block;
-    color: #1f1f1f; /* Texte blanc */
+    color: #000000ce; /* Texte blanc */
     padding: 0px 15px;
     border: none;
     cursor: pointer;
