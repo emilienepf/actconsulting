@@ -1,0 +1,249 @@
+/* Réinitialisation des styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    margin: 0;
+    background-image: url('imagedefond.png'); /* Image de fond */
+    background-color: rgba(255, 255, 255, 0.5); /* Couleur blanche semi-transparente */
+    background-blend-mode: lighten; /* Mélange la transparence avec l'image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Titre principal */
+header h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #ffffff;
+}
+/* Menu principal */
+.header-nav {
+    position: absolute;
+    top: 85px; /* Position pour le menu déroulant sur mobile */
+    right: 30px; /* Aligné à droite */
+    width: 100px; /* Largeur fixe du menu déroulant */
+    background-color: #ffffff; /* Fond blanc */
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.576); /* Ombre légère */
+    border-radius: 5px; /* Coins arrondis */
+    max-height: 0; /* Par défaut, le menu déroulant est masqué */
+    overflow: hidden; /* Cache le contenu lorsqu'il est masqué */
+    transition: max-height 0.3s ease; /* Animation fluide pour l'ouverture/fermeture */
+    z-index: 1000; /* S'assure que le menu est au-dessus des autres éléments */
+}
+
+.header-nav.open {
+    max-height: 300px; /* Hauteur maximale lorsqu'il est ouvert */
+}
+
+/* Liens du menu */
+.header-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav ul li {
+    border-bottom: 1px solid #000000; /* Séparation entre les items dans le menu déroulant */
+}
+
+.header-nav ul li:last-child {
+    border-bottom: none;
+}
+
+.header-nav ul li a {
+    display: block;
+    padding: 15px 15px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Bouton menu */
+.menu-toggle {
+    background: none;
+    display: block;
+    color: #000000; /* Texte blanc */
+    padding: 0px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 3rem;
+    position: absolute;
+    top: 20px; /* Légèrement descendu */
+    right: 10px; /* Position alignée à droite */
+    z-index: 1100; /* S'assure que le bouton est au-dessus du menu */
+}
+
+.menu-toggle:hover {
+    transform: scale(1.2); /* Agrandit légèrement au survol */
+}
+
+
+
+/* Logo en haut à gauche */
+header .logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+header .logo img {
+    width: 400px; /* Taille ajustable */
+    height: auto;
+}
+
+/* Section Formulaire */
+.form-container {
+    background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.form-container h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.form-container label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 1rem;
+}
+
+.form-container input,
+.form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.form-container button {
+    background-color: #64b5f6; /* Bouton bleu */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: #90caf9;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer .contact-info {
+    text-align: left;
+    color: #000000;
+}
+
+footer .contact-info p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+footer .linkedin-logo img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+footer .linkedin-logo img:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive Design pour téléphones */
+@media (max-width: 768px) {
+    /* Corps de la page */
+    body {
+        padding: 10px; /* Réduit le padding pour mobile */
+    }
+
+    /* Logo en haut à gauche */
+    header .logo img {
+        width: 150px; /* Réduit la taille du logo */
+    }
+
+    /* Menu principal */
+    .header-nav {
+        width: 80%; /* Largeur du menu déroulant ajustée */
+        right: 10px; /* Ajuste l'alignement à droite */
+        top: 70px; /* Ajuste la position verticale */
+    }
+
+    .header-nav ul li a {
+        font-size: 1rem; /* Taille réduite des liens */
+        padding: 10px 15px; /* Ajuste le padding pour mobile */
+    }
+
+    /* Formulaire */
+    .form-container {
+        margin-top: 140px;
+        max-width: 100%; /* Le formulaire prend presque toute la largeur */
+        padding: 15px; /* Réduit le padding */
+    }
+
+    .form-container h1 {
+        font-size: 1.8rem; /* Taille réduite pour le titre */
+    }
+
+    .form-container label {
+        font-size: 0.9rem; /* Texte légèrement plus petit */
+    }
+
+    .form-container input,
+    .form-container textarea {
+        padding: 15px; /* Réduit le padding interne */
+    }
+
+    .form-container button {
+        font-size: 0.9rem; /* Réduit la taille du bouton */
+        padding: 8px 15px; /* Ajuste le padding */
+    }
+
+    /* Footer */
+    footer {
+        flex-direction: column; /* Empile les éléments verticalement */
+        align-items: flex-start; /* Aligne les éléments à gauche */
+        gap: 10px; /* Espacement entre les sections */
+        padding: 10px; /* Réduit le padding du footer */
+    }
+
+    footer .linkedin-logo img {
+        width: 40px; /* Réduit la taille du logo LinkedIn */
+        height: 40px;
+    }
+}
