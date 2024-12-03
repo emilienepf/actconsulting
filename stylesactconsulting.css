@@ -19,14 +19,67 @@ body {
     background-blend-mode: lighten; /* Mélange la transparence avec l'image */
 }
 
-/* Header */
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    position: relative;
-    z-index: 1000;
+/* Menu principal */
+.header-nav {
+    position: absolute;
+    top: 85px; /* Position pour le menu déroulant sur mobile */
+    right: 30px; /* Aligné à droite */
+    width: 100px; /* Largeur fixe du menu déroulant */
+    background-color: #ffffff; /* Fond blanc */
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.576); /* Ombre légère */
+    border-radius: 5px; /* Coins arrondis */
+    max-height: 0; /* Par défaut, le menu déroulant est masqué */
+    overflow: hidden; /* Cache le contenu lorsqu'il est masqué */
+    transition: max-height 0.3s ease; /* Animation fluide pour l'ouverture/fermeture */
+    z-index: 1000; /* S'assure que le menu est au-dessus des autres éléments */
+}
+
+.header-nav.open {
+    max-height: 300px; /* Hauteur maximale lorsqu'il est ouvert */
+}
+
+/* Liens du menu */
+.header-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav ul li {
+    border-bottom: 1px solid #000000; /* Séparation entre les items dans le menu déroulant */
+}
+
+.header-nav ul li:last-child {
+    border-bottom: none;
+}
+
+.header-nav ul li a {
+    display: block;
+    padding: 15px 15px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+
+
+/* Bouton menu */
+.menu-toggle {
+    background: none;
+    display: block;
+    color: #ffffff; /* Texte blanc */
+    padding: 0px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 3rem;
+    position: absolute;
+    top: 20px; /* Légèrement descendu */
+    right: 10px; /* Position alignée à droite */
+    z-index: 1100; /* S'assure que le bouton est au-dessus du menu */
+}
+
+.menu-toggle:hover {
+    transform: scale(1.2); /* Agrandit légèrement au survol */
 }
 
 /* Photo de profil */
@@ -42,32 +95,6 @@ header {
     object-fit: cover;
 }
 
-/* Bouton menu pour mobile */
-.menu-toggle {
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-/* Navigation */
-.header-nav {
-    position: absolute; /* Position absolue pour la placer en haut à gauche */
-    top: 10px;
-    right: 60px;
-}
-
-.header-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.header-nav a {
-    text-decoration: none;
-    color: #000000;
-    font-size: 1.4rem;
-}
 
 /* Sections */
 section {
