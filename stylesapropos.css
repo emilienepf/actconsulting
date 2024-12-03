@@ -1,0 +1,226 @@
+/* Réinitialisation des styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #000000ce; /* Arrière-plan léger */
+    color: #333; /* Texte gris foncé */
+    margin: 0;
+    padding: 20px;
+    height: 100vh; /* Pour que le conteneur prenne toute la hauteur */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Conteneur principal */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Centre verticalement */
+    gap: 20px;
+    max-width: 1500px; /* Limite la largeur totale */
+    width: 100%; /* S'étend sur toute la largeur */
+}
+
+/* Section gauche */
+.left-section {
+    flex: 1; /* Prend 1 part de l'espace total */
+    max-width: 50%; /* Limite à 50% de la largeur */
+    text-align: left; /* Texte aligné à gauche */
+}
+
+/* Titre : "En quelques mots" */
+.left-section h1 {
+    font-size: 2.8rem; /* Taille du titre */
+    margin-bottom: 50px; /* Espace sous le titre */
+    margin-top: -60px; /* Remonte légèrement le titre */
+    color: #ffffff; /* Couleur sombre */
+}
+
+/* Paragraphe sous le titre */
+.left-section p {
+    font-size: 1.2rem; /* Taille du texte */
+    line-height: 1.8;
+    color: #ffffff; /* Texte gris clair */
+    margin-top: 10px; /* Espacement par rapport au titre */
+}
+
+/* Section droite */
+.right-section {
+    flex: 1; /* Prend 1 part de l'espace total */
+    max-width: 50%; /* Limite à 50% de la largeur */
+    text-align: center;
+}
+
+/* Photo carrée et grande */
+.right-section img {
+    width: 600px; /* Largeur de l'image */
+    height: 600px; /* Hauteur égale pour rendre l'image carrée */
+    object-fit: cover; /* Remplit l'image sans déformation */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+}
+
+/* Légende */
+.right-section .caption {
+    margin-top: 10px; /* Espacement au-dessus de la légende */
+    font-size: 1rem; /* Taille de police pour la légende */
+    color: #ffffff; /* Texte légèrement plus clair */
+    font-style: italic; /* Texte en italique */
+}
+
+/* Menu principal */
+.header-nav {
+    position: absolute;
+    top: 85px; /* Position pour le menu déroulant sur mobile */
+    right: 30px; /* Aligné à droite */
+    width: 100px; /* Largeur fixe du menu déroulant */
+    background-color: #ffffff; /* Fond blanc */
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.576); /* Ombre légère */
+    border-radius: 5px; /* Coins arrondis */
+    max-height: 0; /* Par défaut, le menu déroulant est masqué */
+    overflow: hidden; /* Cache le contenu lorsqu'il est masqué */
+    transition: max-height 0.3s ease; /* Animation fluide pour l'ouverture/fermeture */
+    z-index: 1000; /* S'assure que le menu est au-dessus des autres éléments */
+}
+
+.header-nav.open {
+    max-height: 300px; /* Hauteur maximale lorsqu'il est ouvert */
+}
+
+/* Liens du menu */
+.header-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav ul li {
+    border-bottom: 1px solid #000000; /* Séparation entre les items dans le menu déroulant */
+}
+
+.header-nav ul li:last-child {
+    border-bottom: none;
+}
+
+.header-nav ul li a {
+    display: block;
+    padding: 15px 15px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+
+
+/* Bouton menu */
+.menu-toggle {
+    background: none;
+    display: block;
+    color: #ffffffa5; /* Texte blanc */
+    padding: 0px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 3rem;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    top: 20px; /* Légèrement descendu */
+    right: 10px; /* Position alignée à droite */
+    z-index: 1100; /* S'assure que le bouton est au-dessus du menu */
+}
+
+.menu-toggle:hover {
+    transform: scale(1.2); /* Agrandit légèrement au survol */
+}
+
+/* Responsive Design pour les téléphones */
+@media (max-width: 768px) {
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #000000ce; /* Arrière-plan léger */
+        color: #333; /* Texte gris foncé */
+        margin: 0;
+        padding: 20px; /* Réduction du padding pour que le texte se rapproche des bords */
+        height: 155vh; /* Pour que le conteneur prenne toute la hauteur */
+        display: flex;
+        flex-direction: column; /* Organise le contenu verticalement */
+        justify-content: flex-start; /* Aligne le contenu en haut */
+        align-items: center; /* Centre horizontalement */
+    }
+
+    /* Conteneur principal */
+    .container {
+        flex-direction: column; /* Empile les sections verticalement */
+        align-items: flex-start; /* Aligne le texte à gauche pour mobile */
+        gap: 20px; /* Réduction de l'espacement vertical */
+        width: 100%; /* Prend toute la largeur de l'écran */
+        padding: 0 10px; /* Réduction des marges latérales */
+    }
+
+    /* Section gauche */
+    .left-section {
+        max-width: 95%; /* Prend presque toute la largeur */
+        margin-top: 60px; /* Espacement en haut pour éviter l'écrasement */
+        text-align: justify; /* Texte justifié pour un meilleur rendu */
+    }
+
+    .left-section h1 {
+        font-size: 1.8rem; /* Taille légèrement réduite */
+        margin-bottom: 20px;
+        margin-top: 0; /* Ajuste l'espacement au-dessus */
+    }
+
+    .left-section p {
+        font-size: 1rem; /* Taille de texte adaptée pour lecture facile */
+        line-height: 1.6; /* Espacement entre les lignes */
+        margin-left: 5px; /* Réduction de la marge à gauche */
+        margin-right: 5px; /* Réduction de la marge à droite */
+    }
+
+    /* Section droite */
+    .right-section {
+        max-width: 120%; /* Prend presque toute la largeur */
+        text-align: center; /* Centre l'image et la légende */
+        margin: 0 auto; /* Centre la section horizontalement */
+    }
+    .right-section img {
+        width: 300px; /* Taille réduite pour mobile */
+        height: 300px; /* Maintient le format carré */
+        border-radius: 10px;
+        margin: 0 auto; /* Centre parfaitement l'image */
+        display: block; /* Nécessaire pour que margin: auto fonctionne */
+    }
+
+    .right-section .caption {
+        font-size: 0.9rem; /* Taille réduite pour la légende */
+        margin-top: 10px; /* Espacement au-dessus de la légende */
+        text-align: center; /* Centre la légende */
+    }
+
+    /* Bouton menu */
+    .menu-toggle {
+        font-size: 2rem; /* Taille réduite pour s'adapter aux petits écrans */
+        right: 10px; /* Position légèrement ajustée */
+        top: 10px; /* Ajuste la hauteur */
+    }
+
+    /* Navigation mobile */
+    .header-nav {
+        width: 25%; /* Plus de largeur pour le menu */
+        top: 50px; /* Ajuste la position verticale */
+        right: 10px; /* Aligne à droite */
+    }
+
+    .header-nav ul li a {
+        font-size: 1rem; /* Réduit la taille des liens */
+        padding: 10px 15px; /* Ajuste le padding pour mobile */
+    }
+}
