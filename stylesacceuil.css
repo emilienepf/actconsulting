@@ -1,0 +1,131 @@
+/* Réinitialisation des marges et paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corps et arrière-plan */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.background {
+    height: 100vh; /* S'étend sur toute la hauteur de la page */
+    background-image: url('https://fr.newtable.com/images/actualite/actualite_536.jpeg'); /* Image de fond */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.5); /* Couleur blanche semi-transparente */
+    background-blend-mode: lighten; /* Mélange la transparence avec l'image */
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centre le contenu horizontalement */
+    padding: 10px 20px;
+    height: 120px; /* Taille réduite pour les petits écrans */
+    z-index: 10;
+    position: relative; /* Permet de positionner les éléments enfants si nécessaire */
+}
+
+.profile {
+    position: absolute;
+    left: 10px; /* Positionne la photo de profil à gauche */
+}
+
+.profile-picture {
+    width: 80px; /* Taille réduite sur téléphone */
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header-title {
+    font-size: 1.2rem; /* Taille ajustée pour petits écrans */
+    color: #000;
+    margin: 0;
+    text-align: center;
+}
+
+/* Contenu principal */
+.content {
+    display: flex;
+    flex-direction: column; /* Place le texte au-dessus des logos */
+    justify-content: center; /* Centre verticalement */
+    align-items: center; /* Centre horizontalement */
+    height: 100vh; /* Occupe toute la hauteur de la page */
+    text-align: center; /* Aligne le texte au centre */
+    color: #000;
+    padding: 10px;
+}
+
+.content h1 {
+    font-size: 2rem; /* Taille réduite du titre */
+    margin-bottom: 20px;
+}
+
+/* Logos */
+.logos {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux logos de s'empiler si nécessaire */
+    justify-content: center; /* Centre les logos sur petits écrans */
+    align-items: center;
+    gap: 80px; /* Espacement réduit entre les logos */
+    margin: 20px 0;
+}
+
+.logo {
+    max-width: 250px; /* Taille maximale réduite pour les logos */
+    width: 100%; /* Les logos s'adaptent à la largeur disponible */
+    height: auto;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Animation fluide */
+}
+
+.logo:hover {
+    transform: scale(1.1); /* Agrandit légèrement le logo */
+}
+
+/* Media Queries pour petits écrans */
+@media (max-width: 768px) {
+    .header {
+        height: 100px; /* Taille réduite du header */
+        flex-direction: column; /* Réorganise le header en colonne */
+        padding: 5px;
+    }
+
+    .profile {
+        position: static; /* Supprime la position absolue */
+        margin-bottom: 10px; /* Ajoute un espacement sous la photo */
+    }
+
+    .profile-picture {
+        width: 60px; /* Réduit la taille de la photo */
+        height: 60px;
+    }
+
+    .header-title {
+        font-size: 1rem; /* Réduit la taille du texte */
+    }
+
+    .content h1 {
+        font-size: 1.5rem; /* Réduit la taille du titre */
+        margin-bottom: 10px; /* Réduit l'espacement sous le titre */
+    }
+
+    .logos {
+        flex-direction: column; /* Aligne les logos en colonne */
+    }
+
+    .logo {
+        max-width: 150px; /* Réduit la taille maximale des logos */
+    }
+}
